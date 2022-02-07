@@ -1,1 +1,1 @@
-web: sh -c "cd api_todo && python manage.py migrate && gunicorn api_todo.wsgi:api_todo"
+web: sh -c "cd api_todo && python manage.py migrate && gunicorn api_todo.wsgi:application"
