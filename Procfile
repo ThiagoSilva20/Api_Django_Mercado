@@ -1,1 +1,1 @@
-web: python api_todo/manage.py runserver
+web: pip install -r requirements.txt && python api_todo/manage.py runserver
