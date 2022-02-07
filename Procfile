@@ -1,1 +1,1 @@
-web: pip install -r requirements.txt && python api_todo/manage.py runserver
+web: sh -c "cd api_todo && gunicorn api_todo.wsgi:api_todo"
