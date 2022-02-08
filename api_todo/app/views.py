@@ -1,6 +1,6 @@
-from .models import Todo
+from .models import Compras
 from urllib import response
-from .serializers import TodoSerializer
+from .serializers import ComprasSerializer
 
 ##############################################
 
@@ -14,11 +14,11 @@ from rest_framework.exceptions import NotFound
 #######################################################
 
 class TodoListAndCreate(generics.ListCreateAPIView):
-    queryset = Todo.objects.all()
-    serializer_class = TodoSerializer
+    queryset = Compras.objects.all()
+    serializer_class = ComprasSerializer
 #######################################################################################
 
 class TodoDetailChangeAndDelete(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Todo.objects.all()
-    serializer_class = TodoSerializer
+    queryset = Compras.objects.all()
+    serializer_class = ComprasSerializer
 #######################################################################################
