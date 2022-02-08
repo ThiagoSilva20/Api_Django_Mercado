@@ -17,8 +17,8 @@ class Loja(models.Model):
 #######################################################
 
 class Produto(models.Model):
-    nome_prod = CharField(max_length=100)
-    preco = CharField()
+    nome_prod = models.CharField(max_length=100)
+    preco = models.CharField(max_length=100)
 
 #######################################################
 
