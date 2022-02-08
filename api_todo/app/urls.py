@@ -1,7 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from app import views
-from models import Usuario, Compras, Produto, Loja
 
 
 router = DefaultRouter()
