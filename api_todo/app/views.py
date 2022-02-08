@@ -1,24 +1,31 @@
-from .models import Compras
-from urllib import response
-from .serializers import ComprasSerializer
+from .models import Compras, Loja, Produto, Usuario
+from .serializers import CompraSerializer, UsuarioSerializer, ProdutoSerializer, LojaSerializer
 
 ##############################################
 
-from rest_framework import status
-from rest_framework import generics
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework.decorators import api_view
-from rest_framework.exceptions import NotFound
+from rest_framework import viewsets
 
 #######################################################
 
-class TodoListAndCreate(generics.ListCreateAPIView):
-    queryset = Compras.objects.all()
-    serializer_class = ComprasSerializer
-#######################################################################################
+class UsuarioView(viewsets.ModelViewSet):
+    queryset = Usuario.objects.all()
+    serializer_class = UsuarioSerializer
 
-class TodoDetailChangeAndDelete(generics.RetrieveUpdateDestroyAPIView):
+########################################
+
+class LojaView(viewsets.ModelViewSet):
+    queryset = Loja.objects.all()
+    serializer_class = LojaSerializer
+
+########################################
+
+class ProdutoView(viewsets.ModelViewSet):
+    queryset = Produto.objects.all()
+    serializer_class = ProdutoSerializer
+
+########################################
+
+class CompraView(viewsets.ModelViewSet):
     queryset = Compras.objects.all()
-    serializer_class = ComprasSerializer
-#######################################################################################
+    serializer_class = CompraSerializer
+
