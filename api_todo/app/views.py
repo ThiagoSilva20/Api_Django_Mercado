@@ -38,7 +38,7 @@ class CompraView(viewsets.ModelViewSet):
 @api_view(['GET'])
 def busca_usu(request):
     str_busca = request.GET['usuario']
-    frela = Usuario.objects.filter(nome=str_busca)
+    frela = Usuario.objects.filter(nome__contains=str_busca)
     print(frela)
 
     frela2 = UsuarioSerializer(frela, many=True).data
