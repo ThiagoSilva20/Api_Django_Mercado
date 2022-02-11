@@ -27,4 +27,3 @@ class Compras(models.Model):
     loja = models.ForeignKey("Loja", on_delete=models.DO_NOTHING)
     prod = models.ForeignKey("Produto", on_delete=models.DO_NOTHING)
     diaehora = models.DateTimeField(auto_now_add=True)
-

@@ -12,5 +12,7 @@ router.register(r'Compra', views.CompraView)
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('search', views.busca),
+    path('search_usu', views.busca_usu),
+    path('search_prod', views.busca_prod),
+    path('search_loja', views.busca_loja),
 ]
