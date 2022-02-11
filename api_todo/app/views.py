@@ -48,7 +48,7 @@ def busca_usu(request):
 @api_view(['GET'])
 def busca_prod(request):
     str_busca = request.GET['produto']
-    frela = Produto.objects.filter(nome_prod=str_busca)
+    frela = Produto.objects.filter(nome_prod__contains=str_busca)
     print(frela)
 
     frela2 = ProdutoSerializer(frela, many=True).data
@@ -58,8 +58,19 @@ def busca_prod(request):
 @api_view(['GET'])
 def busca_loja(request):
     str_busca = request.GET['loja']
-    frela = Loja.objects.filter(nome_loja=str_busca)
+    frela = Loja.objects.filter(nome_loja__contains=str_busca)
     print(frela)
 
     frela2 = LojaSerializer(frela, many=True).data
+    return Response(data=frela2)
+
+########################################
+
+@api_view(['GET'])
+def busca_comp(request):
+    str_busca = request.GET['compra']
+    frela = Compras.objects.filter(diaehora__contains=str_busca)
+    print(frela)
+
+    frela2 = CompraSerializer(frela, many=True).data
     return Response(data=frela2)

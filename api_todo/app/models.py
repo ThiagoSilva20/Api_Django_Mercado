@@ -22,7 +22,7 @@ class Produto(models.Model):
 
 #######################################################
 
-class Compras(models.Model):   
+class Compras(models.Model): 
     usu = models.ForeignKey("Usuario", on_delete=models.DO_NOTHING)
     loja = models.ForeignKey("Loja", on_delete=models.DO_NOTHING)
     prod = models.ForeignKey("Produto", on_delete=models.DO_NOTHING)
